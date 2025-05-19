@@ -861,13 +861,26 @@
         return false;
     });
 
-    $(document).ready(function () {
+     $(document).ready(function () {
+        // Menu toggle
         $("#btn-bars").on("click", function () {
             $("header").toggleClass("open-menu");
-        })
+        });
         $("#closeX").on("click", function () {
             $("header").removeClass("open-menu");
-        })
+        });
+
+        // Apenas obter localização e mostrar na consola
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (pos) {
+                console.log("Latitude:", pos.coords.latitude);
+                console.log("Longitude:", pos.coords.longitude);
+            }, function (err) {
+                console.error("Erro ao obter localização:", err.message);
+            });
+        } else {
+            console.log("Geolocalização não suportada pelo navegador.");
+        }
     });
 
 </script>
