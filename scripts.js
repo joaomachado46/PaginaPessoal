@@ -1,6 +1,6 @@
 AOS.init({ once: true, duration: 800 });
 
-// highlight link ativo
+// highlight link 
 const links = document.querySelectorAll('.nav-link');
 const sections = [...document.querySelectorAll('section[id]')];
 
