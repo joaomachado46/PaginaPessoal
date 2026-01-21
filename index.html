@@ -1,886 +1,340 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="pagina_pessoal.css">
-    <link rel="stylesheet" href="pagina_pessoal_mobile.css">
-    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://.fontawesome.com/releases/v5.0.7/css/all.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.9.0/devicon.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        header {
-            position: fixed;
-            width: 100%;
-            z-index: 5;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>João Machado | Software Developer</title>
 
-        body {
-            background-color: rgb(96, 109, 122);
-            overflow-x: hidden;
-        }
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
-        .box {
-            box-shadow: -1px -5px 15px 16px rgba(8, 11, 0, 0.45);
-            position: relative;
-        }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        #mobile {
-            display: none;
-        }
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
 
-        #icon-menu {
-            z-index: 1;
-            font-size: 62px;
-            position: absolute;
-            top: 21px;
-            left: 63px;
-        }
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-        nav {
-            background-color: rgb(96, 109, 122);
-        }
-
-        .barra-nav {
-            width: 100%;
-            height: 15vh;
-            display: flex;
-            margin-right: 0%;
-            margin-left: 0%;
-            align-items: center;
-            justify-content: center;
-        }
-
-        nav li {
-            display: inline-flex;
-            font-size: initial;
-        }
-
-        nav li a {
-            color: rgb(71, 71, 71);
-            padding-inline-start: 30px;
-            text-decoration: none;
-        }
-
-        nav li a:hover {
-            color: rgb(179, 177, 177);
-            transition: 1s;
-            text-decoration: none;
-        }
-
-        nav li a:focus {
-            color: rgb(179, 177, 177);
-            text-decoration: none;
-        }
-
-        #img-pessoal {
-            float: right;
-            margin-top: 107px;
-            opacity: 0.5;
-        }
-
-        .apresentacao {
-            position: relative;
-        }
-
-        .titulo-sobre-mim {
-            position: absolute;
-            width: 100%;
-        }
-
-        .titulo-sobre-mim h1 {
-            font-size: -webkit-xxx-large;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-
-        #titulo-principal {
-            margin-top: 413px;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-
-        .area-texto-apresentacao {
-            position: absolute;
-            top: 797px;
-            text-align: center;
-            width: 100%;
-            height: 875px;
-            display: flex;
-            margin-right: 0%;
-            margin-left: 0%;
-            align-items: center;
-            justify-content: center;
-            z-index: 1;
-            background-color: rgb(38, 46, 53);
-            box-shadow: 13px 6px 7px 17px rgba(2, 11, 0, 0.45);
-        }
-
-        .texto {
-            color: white;
-            margin-top: 55px;
-            height: 71vh;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-
-        .texto h3 {
-            font-size: 49px;
-        }
-
-        .texto p {
-            margin-top: 40px;
-            font-size: x-large;
-        }
-
-        #btn-download {
-            POSITION: relative;
-            display: inline-block;
-            padding: 20px 40px;
-            color: rgba(0, 0, 0, 0.6);
-            background: white;
-            font-size: 20px;
-            letter-spacing: 8px;
-            transition: 0.5s;
-            margin-top: 42px;
-            text-decoration: none;
-        }
-
-        .texto a:hover {
-            color: rgba(0, 0, 0, 1);
-        }
-
-        .texto a span {
-            display: block;
-            position: absolute;
-            background: rgb(79, 148, 79);
-        }
-
-        .texto a span:nth-child(1) {
-            left: 0;
-            bottom: 0;
-            width: 5px;
-            height: 100%;
-            transform: scaleY(0);
-            transform-origin: top;
-            transition: transform 0.5s;
-        }
-
-        .texto a:hover span:nth-child(1) {
-            transform: scaleY(1);
-            transform-origin: bottom;
-            transition: 0.5s;
-        }
-
-        .texto a span:nth-child(2) {
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 5px;
-            transform: scaleX(0);
-            transform-origin: right;
-            ;
-            transition: transform 0.5s;
-        }
-
-        .texto a:hover span:nth-child(2) {
-            transform: scaleX(1);
-            transform-origin: left;
-            transition: 0.5s;
-        }
-
-        .texto a span:nth-child(3) {
-            right: 0;
-            bottom: 0;
-            width: 5px;
-            height: 100%;
-            transform: scaleY(0);
-            transform-origin: top;
-            transition: transform 0.5s;
-            transition-delay: 0.5s;
-        }
-
-        .texto a:hover span:nth-child(3) {
-            transform: scaleY(1);
-            transform-origin: bottom;
-            transition: 0.5s;
-            transition-delay: 0.5s;
-        }
-
-        .texto a span:nth-child(4) {
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 5px;
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.5s;
-            transition-delay: 0.5s;
-        }
-
-        .texto a:hover span:nth-child(4) {
-            transform: scaleX(1);
-            transform-origin: left;
-            transition: 0.5s;
-            transition-delay: 0.5s;
-        }
-
-        .area-de-tecnologias {
-            background-image: url("img/computer-768696_1920.jpg");
-            background-repeat: no-repeat;
-            position: absolute;
-            top: 1648px;
-            text-align: center;
-            width: 100%;
-            height: 177vh;
-            display: flex;
-            margin-right: 0%;
-            margin-left: 0%;
-            opacity: 0.9;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-shadow: 4px 4px 5px black;
-            box-shadow: 13px 6px 7px 17px rgba(2, 11, 0, 0.45);
-        }
-
-        .back-end {
-            height: 146vh;
-            margin-top: -92px;
-        }
-
-        .back-end h3 {
-            color: white;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 54px;
-            letter-spacing: 9px;
-            margin-top: 55px;
-        }
-
-        .barra {
-            font-size: x-large;
-            margin-bottom: 36px;
-        }
-
-        #barra-verde1 {
-            margin-top: 0px;
-            width: 98%;
-        }
-
-        #barra-verde {
-            transition-duration: 3s;
-            margin-top: 37px;
-            width: 98%;
-        }
-
-        .progress {
-            background: rgba(255, 255, 255, 0.1);
-            justify-content: flex-start;
-            border-radius: 100px;
-            align-items: center;
-            position: relative;
-            padding: 0 5px;
-            display: flex;
-            height: 40px;
-            float: right;
-            width: 75%;
-            margin-bottom: -9px;
-        }
-
-        .nivelconhecimento {
-            margin-top: 4px;
-        }
-
-
-        .progress-valueMVC {
-            animation: load1 3s normal forwards;
-            box-shadow: 0 10px 40px -10px #fff;
-            border-radius: 100px;
-            background: rgb(89, 172, 102);
-            height: 30px;
-            width: 0;
-        }
-
-        @keyframes load1 {
-            0% {
-                width: 0;
-            }
-
-            100% {
-                width: 80%;
-            }
-        }
-
-        .progress-valueEF {
-            animation: load2 3s normal forwards;
-            box-shadow: 0 10px 40px -10px #fff;
-            border-radius: 100px;
-            background: rgb(89, 172, 102);
-            height: 30px;
-            width: 0;
-        }
-
-        @keyframes load2 {
-            0% {
-                width: 0;
-            }
-
-            100% {
-                width: 70%;
-            }
-        }
-
-        .progress-valueHTML {
-            animation: load3 3s normal forwards;
-            box-shadow: 0 10px 40px -10px #fff;
-            border-radius: 100px;
-            background: rgb(89, 172, 102);
-            height: 30px;
-            width: 0;
-        }
-
-        @keyframes load3 {
-            0% {
-                width: 0;
-            }
-
-            100% {
-                width: 90%;
-            }
-        }
-
-        .progress-valueCSS {
-            animation: load4 3s normal forwards;
-            box-shadow: 0 10px 40px -10px #fff;
-            border-radius: 100px;
-            background: rgb(89, 172, 102);
-            height: 30px;
-            width: 0;
-        }
-
-        @keyframes load4 {
-            0% {
-                width: 0;
-            }
-
-            100% {
-                width: 50%;
-            }
-        }
-
-        .progress-valueJS {
-            animation: load5 3s normal forwards;
-            box-shadow: 0 10px 40px -10px #fff;
-            border-radius: 100px;
-            background: rgb(89, 172, 102);
-            height: 30px;
-            width: 0;
-        }
-
-        @keyframes load5 {
-            0% {
-                width: 0;
-            }
-
-            100% {
-                width: 30%;
-            }
-        }
-
-        .progress-valueSQL {
-            animation: load6 3s normal forwards;
-            box-shadow: 0 10px 40px -10px #fff;
-            border-radius: 100px;
-            background: rgb(89, 172, 102);
-            height: 30px;
-            width: 0;
-        }
-
-        @keyframes load6 {
-            0% {
-                width: 0;
-            }
-
-            100% {
-                width: 50%;
-            }
-        }
-
-        .progress-valueMYSQL {
-            animation: load7 3s normal forwards;
-            box-shadow: 0 10px 40px -10px #fff;
-            border-radius: 100px;
-            background: rgb(89, 172, 102);
-            height: 30px;
-            width: 0;
-        }
-
-        @keyframes load7 {
-            0% {
-                width: 0;
-            }
-
-            100% {
-                width: 70%;
-            }
-        }
-
-        .progress-valueAZURE {
-            animation: load8 3s normal forwards;
-            box-shadow: 0 10px 40px -10px #fff;
-            border-radius: 100px;
-            background: rgb(89, 172, 102);
-            height: 30px;
-            width: 0;
-        }
-
-        @keyframes load8 {
-            0% {
-                width: 0;
-            }
-
-            100% {
-                width: 50%;
-            }
-        }
-
-        #softskills {
-            display: flow-root;
-            position: relative;
-            width: 100%;
-        }
-
-        @media only screen and (max-width: 768px) {
-            .area-texto-apresentacao {
-                position: absolute;
-                top: 797px;
-                text-align: center;
-                width: 100%;
-                height: 985px;
-                display: flex;
-                margin-right: 0%;
-                margin-left: 0%;
-                align-items: center;
-                justify-content: center;
-                background-color: rgb(38, 46, 53);
-                box-shadow: 13px 6px 7px 17px rgba(2, 11, 0, 0.45);
-            }
-
-            .area-de-tecnologias {
-                background-image: url(img/computer-768696_1920.jpg);
-                position: absolute;
-                top: 1764px;
-                text-align: center;
-                width: 100%;
-                height: 130vh;
-                display: flex;
-                margin-right: 0%;
-                margin-left: 0%;
-                opacity: 0.9;
-                align-items: center;
-                justify-content: center;
-                box-shadow: 13px 6px 7px 17px rgba(2, 11, 0, 0.45);
-            }
-
-            div#barra-verde1 {
-                transform: translate3d(0px, 0, 0);
-            }
-
-            div#barra-verde {
-                transform: translate3d(0px, 0, 0);
-            }
-
-            .back-end {
-                height: 124vh;
-                margin-top: 305PX;
-            }
-        }
-
-        @media only screen and (max-width: 600px) {
-            nav ul {
-                display: none;
-            }
-
-            .col-xs-6 {
-                width: 50%;
-                padding-left: 0;
-                padding-right: 0;
-            }
-
-            .area-texto-apresentacao {
-                position: absolute;
-                top: 797px;
-                text-align: center;
-                width: 100%;
-                height: 1235px;
-                display: flex;
-                margin-right: 0%;
-                margin-left: 0%;
-                align-items: center;
-                justify-content: center;
-                background-color: rgb(38, 46, 53);
-                box-shadow: 13px 6px 7px 17px rgba(2, 11, 0, 0.45);
-            }
-
-            .back-end {
-                height: 218vh;
-                margin-top: -202px;
-            }
-
-            .texto {
-                color: white;
-                margin-top: 176px;
-                height: 95%;
-                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            }
-
-            #titulo-principal {
-                margin-top: 261px;
-                text-align: center;
-                color: white;
-                position: relative;
-            }
-
-            #btn-bars {
-                color: #fff;
-                background: none;
-                font-size: 22px;
-                margin: 7px;
-                position: absolute;
-                border: none;
-                z-index: 1;
-            }
-
-            #mobile {
-                display: flex;
-            }
-
-            header #menu-mobile {
-                position: fixed;
-                top: 40px;
-                background-color: #fff;
-                width: 80%;
-                height: 90%;
-                left: -80%;
-                transition: 1s;
-                z-index: 5;
-                display: flex;
-            }
-
-            header.open-menu #menu-mobile {
-                left: 0;
-            }
-
-            header.open-menu #menu-mobile-mask {
-                position: fixed;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                background-color: rgba(0, 0, 0, .5);
-                z-index: 4;
-            }
-
-            header.open-menu #menu-mobile ul {
-                margin-top: 66px;
-                margin-right: 9px;
-                margin-inline: 17px;
-            }
-
-            header.open-menu #menu-mobile li {
-                text-align: center;
-                margin-top: 29px;
-                list-style-type: none;
-                border-top: #CCC 2px solid;
-                border-bottom: #CCC 2px solid;
-
-            }
-
-            header.open-menu #menu-mobile li a {
-                color: rgb(38, 46, 53);
-                font-family: 'Poppins-ExtraLight';
-                font-size: 21px;
-                padding: 8px 7px;
-                font-weight: bold;
-                margin-top: 100px;
-            }
-
-            #closeMenuMobile {
-                position: absolute;
-                background-color: rgb(38, 46, 53);
-                ;
-                height: 40px;
-                border: none;
-                width: 100%;
-                bottom: 0;
-            }
-
-            #closeX {
-                background: none;
-                color: white;
-                width: 49px;
-                height: 36px;
-                border: none;
-                font-size: 28px;
-                margin-inline: 6px;
-                float: right;
-
-            }
-
-            #menu-mobile ul .efeito {
-                font-size: 2em;
-                transition: 1s;
-            }
-
-            .back-end h3 {
-                color: white;
-                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-                font-size: 37px;
-                margin-top: 55px;
-            }
-
-            .area-de-tecnologias {
-                background-image: url(img/computer-768696_1920.jpg);
-                position: absolute;
-                top: 2030px;
-                text-align: center;
-                width: 100%;
-                height: 250vh;
-                display: flex;
-                margin-right: 0%;
-                margin-left: 0%;
-                opacity: 0.9;
-                align-items: center;
-                justify-content: center;
-                box-shadow: 13px 6px 7px 17px rgba(2, 11, 0, 0.45);
-            }
-
-            #barra-verde1 {
-                margin-top: -3px;
-                width: 98%;
-            }
-
-            #barra-verde {
-                transition-duration: 3s;
-                margin-top: 46px;
-                width: 98%;
-            }
-        }
-    </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<header>
-    <div class="box">
-        <i id="icon-menu" class="devicon-csharp-plain-wordmark"></i>
-        <div id="mobile">
-            <button id="btn-bars" type="button" class="fa fa-bars"></button>
-            <div id="menu-mobile-mask" class="visible-xs"></div>
-            <div id="menu-mobile" class=>
-                <ul>
-                    <li><a href="#home">HOME</a></li>
-                    <li><a href="#sobre-mim">ABOUT ME</a></li>
-                    <li><a href="#experiencia">SKILLS</a></li>
-                    <li><a>PORTFÓLIO</a></li>
-                    <li><a>CONTATO</a></li>
-                </ul>
-
-                <div id="closeMenuMobile">
-                    <button href="#" id="closeX" type="button" class="fa fa-close"> </button>
-                </div>
-            </div>
-        </div>
-        <nav class="barra-nav box">
-            <ul class="">
-                <li><a href="#home">HOME</a></li>
-                <li><a href="#sobre-mim">ABOUT ME</a></li>
-                <li><a href="#experiencia">SKILLS</a></li>
-                <li><a>PORTFÓLIO</a></li>
-                <li><a>CONTATO</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
 
 <body>
-    <div id="home" class="apresentacao">
-        <img id="img-pessoal" src="img/download-removebg.png" alt="foto_João">
-        <div class="titulo-sobre-mim">
-            <div id="titulo-principal">
-                <h1>
-                    JOÃO MACHADO
-                </h1>
-                <h3>
-                    <i class="fas fa-laptop-code"></i> SOFTWARE DEVELOPER
-                </h3>
-            </div>
-        </div>
-    </div>
-    <div id="sobre-mim" class="area-texto-apresentacao">
-        <div class="container texto">
-            <h3>ABOUT ME</h3>
-            <p>Hello, my name is João Machado.
-                And in the last 2 years I made a 180º turn to my goal. I lost my job for years and decided to put into practice one of my interests, I started to study programming.
-                I currently work in the IT field, and I love what I do.
-                In my personal life, what I like to do the most, is spend time with my family, I enjoy being in contact with nature, playing Padel and BTT.
-                Well, this is a little summary, about me.<br/>
-                Do not hesitate to contact me if you need to know more about me.</p><br />
-            <a id="btn-download" href="pdf/CV-João Machado.pdf" download="CURRICULO-JOAO-MACHADO.pdf">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                DOWNLOAD CURRICULO</a>
-        </div>
-    </div>
-    <div id="experiencia" class="area-de-tecnologias">
-        <div class="back-end container">
-            <h3><strong>HARD SKILLS</strong></h3>
-            <div class="linhas" style="margin-top: 53px;">
-                <div class="col-xs-6">
-                    <div class="d-flex flex-sm-column barra" data-aos="fade-right" style="transition-duration: 1.5s;">
-                        <strong>.NET CORE / FRAMEWORK</strong>
-                    </div>
-                    <div class="d-flex flex-sm-column barra" data-aos="fade-right" style="transition-duration: 2.5s;">
-                        <strong>ENTITY FRAMEWORK / DAPPER</strong>
-                    </div>
-                    <div class="d-flex flex-sm-column barra" data-aos="fade-right" style="transition-duration: 3.5s;">
-                        <strong>WEB API (REST/SOAP)</strong>
-                    </div>
-                    <div class="d-flex flex-sm-column barra" data-aos="fade-right" style="transition-duration: 4.5s;">
-                        <strong>HTML / CSS</strong>
-                    </div>
-                    <div class="d-flex flex-sm-column barra" data-aos="fade-right" style="transition-duration: 5.5s;">
-                        <strong>JAVASCRIPT</strong>
-                    </div>
-                    <div class="d-flex flex-sm-column barra" data-aos="fade-right" style="transition-duration: 5.5s;">
-                        <strong>SQL / PL-SQL</strong>
-                    </div>
-                    <div class="d-flex flex-sm-column barra" data-aos="fade-right" style="transition-duration: 5.5s;">
-                        <strong>APEX (Oracle Application Express)</strong>
-                    </div>
-                    <div class="d-flex flex-sm-column barra" data-aos="fade-right" style="transition-duration: 5.5s;">
-                        <strong>SQL Developer</strong>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6">
-                <div id="barra-verde1" class="progress" data-aos="fade-left" style="transition-duration: 1.5s;">
-                    <div class="progress-valueMVC">
-                        <div class="nivelconhecimento">8</div>
-                    </div>
-                </div>
-                <div id="barra-verde" class="progress" data-aos="fade-left" style="transition-duration: 2s;">
-                    <div class="progress-valueEF">
-                        <div class="nivelconhecimento">7</div>
-                    </div>
-                </div>
-                <div id="barra-verde" class="progress" data-aos="fade-left" style="transition-duration: 2.5s;">
-                    <div class="progress-valueHTML">
-                        <div class="nivelconhecimento">9</div>
-                    </div>
-                </div>
-                <div id="barra-verde" class="progress" data-aos="fade-left" style="transition-duration: 3s;">
-                    <div class="progress-valueCSS">
-                        <div class="nivelconhecimento">5</div>
-                    </div>
-                </div>
-                <div id="barra-verde" class="progress" data-aos="fade-left" style="transition-duration: 3s;">
-                    <div class="progress-valueJS">
-                        <div class="nivelconhecimento">3</div>
-                    </div>
-                </div>
-                <div id="barra-verde" class="progress" data-aos="fade-left" style="transition-duration: 3s;">
-                    <div class="progress-valueSQL">
-                        <div class="nivelconhecimento">5</div>
-                    </div>
-                </div>
-                <div id="barra-verde" class="progress" data-aos="fade-left" style="transition-duration: 3s;">
-                    <div class="progress-valueMYSQL">
-                        <div class="nivelconhecimento">7</div>
-                    </div>
-                </div>
-                <div id="barra-verde" class="progress" data-aos="fade-left" style="transition-duration: 3s;">
-                    <div class="progress-valueAZURE">
-                        <div class="nivelconhecimento">5</div>
-                    </div>
-                </div>
-            </div>
-            <h3 id="softskills"><strong>SOFT SKILLS</strong></h3>
-            <div class="linhas" style="margin-top: 53px;">
-                <div class="col-xs-6">
-                    <div class="d-flex flex-sm-column barra" data-aos="fade-right" style="transition-duration: 1.5s;">
-                        <strong>Comunicação</strong>
-                    </div>
-                    <div class="d-flex flex-sm-column barra" data-aos="fade-right" style="transition-duration: 2.5s;">
-                        <strong>Colaboração</strong>
-                    </div>
-                    <div class="d-flex flex-sm-column barra" data-aos="fade-right" style="transition-duration: 3.5s;">
-                        <strong>Trabalho em equipa</strong>
-                    </div>
-                    <div class="d-flex flex-sm-column barra" data-aos="fade-right" style="transition-duration: 4.5s;">
-                        <strong>Empatia</strong>
-                    </div>
-                </div>
-                <div class="col-xs-6">
-                    <div class="d-flex flex-sm-column barra" data-aos="fade-right" style="transition-duration: 5.5s;">
-                        <strong>Organização</strong>
-                    </div>
-                    <div class="d-flex flex-sm-column barra" data-aos="fade-right" style="transition-duration: 5.5s;">
-                        <strong>Ética</strong>
-                    </div>
-                    <div class="d-flex flex-sm-column barra" data-aos="fade-right" style="transition-duration: 5.5s;">
-                        <strong>Flexibilidade</strong>
-                    </div>
-                    <div class="d-flex flex-sm-column barra" data-aos="fade-right" style="transition-duration: 5.5s;">
-                        <strong>Trabalhar sob pressão</strong>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <footer>
+  <!-- NAV -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+        <i class="devicon-csharp-plain fs-3"></i>
+        <span class="fw-semibold">João Machado</span>
+      </a>
 
-    </footer>
-    <script src="https://kit.fontawesome.com/79f6b62416.js" crossorigin="anonymous"></script>
-    <script src="lib/jquery/jquery.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfólio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7" data-aos="fade-up" data-aos-duration="900">
+          <p class="badge-soft mb-3">SOFTWARE DEVELOPER • .NET • ORACLE</p>
+          <h1 class="display-4 fw-bold mb-3">
+            João Machado
+          </h1>
+          <p class="lead text-muted mb-4">
+            Desenvolvedor focado em APIs (.NET Core), integrações e Oracle (APEX/PLSQL).
+            Gosto de construir soluções simples, robustas e bem estruturadas.
+          </p>
+
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-primary btn-lg" href="pdf/CV-João Machado.pdf" download="CURRICULO-JOAO-MACHADO.pdf">
+              Download CV
+            </a>
+            <a class="btn btn-outline-light btn-lg" href="https://github.com/joaomachado46" target="_blank" rel="noopener">
+              Ver GitHub
+            </a>
+          </div>
+
+          <div class="mt-4 d-flex gap-3 small text-muted">
+            <span class="d-flex align-items-center gap-2"><span class="dot"></span> APIs & Integrações</span>
+            <span class="d-flex align-items-center gap-2"><span class="dot"></span> Oracle / PL/SQL</span>
+            <span class="d-flex align-items-center gap-2"><span class="dot"></span> Boas práticas</span>
+          </div>
+        </div>
+
+        <div class="col-lg-5 text-center" data-aos="fade-left" data-aos-duration="900">
+          <!-- Mantém a tua imagem -->
+          <img class="hero-photo" src="img/download-removebg.png" alt="Foto do João Machado" />
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-glow"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="sobre" class="section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5" data-aos="fade-right" data-aos-duration="900">
+          <div class="card-soft p-4">
+            <h2 class="h3 fw-bold mb-2">About me</h2>
+            <p class="text-muted mb-0">
+              Olá! Sou o João Machado. Nos últimos anos reorientei a minha carreira para a programação e hoje trabalho na área de IT.
+              Gosto de desenvolvimento backend, integrações e bases de dados. Fora do trabalho, gosto de família, natureza, padel e BTT.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-7" data-aos="fade-up" data-aos-duration="900">
+          <div class="card-soft p-4">
+            <h3 class="h5 fw-semibold mb-3">O que costumo fazer</h3>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="mini-card">
+                  <div class="mini-title">APIs em .NET</div>
+                  <div class="mini-text">REST, integração, autenticação, logging, boas práticas.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mini-card">
+                  <div class="mini-title">Integrações</div>
+                  <div class="mini-text">REST/SOAP, mapeamentos, validação, robustez.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mini-card">
+                  <div class="mini-title">Oracle / APEX</div>
+                  <div class="mini-text">SQL, PL/SQL, páginas APEX e processos.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mini-card">
+                  <div class="mini-title">Manutenção evolutiva</div>
+                  <div class="mini-text">Refactor, performance, melhorias com foco no negócio.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 d-flex flex-wrap gap-2">
+              <a class="btn btn-outline-light" href="pdf/CV-João Machado.pdf" download="CURRICULO-JOAO-MACHADO.pdf">
+                Download CV
+              </a>
+              <a class="btn btn-outline-light" href="#contacto">
+                Falar comigo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section section-dark">
+    <div class="container">
+      <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-4">
+        <div>
+          <h2 class="h3 fw-bold mb-1">Skills</h2>
+          <p class="text-muted mb-0">Uma visão rápida das tecnologias com que trabalho.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="900">
+          <div class="card-soft p-4">
+            <div class="skill">
+              <div class="skill-top">
+                <span>.NET Core / Framework</span><span>8/10</span>
+              </div>
+              <div class="progress progress-modern">
+                <div class="progress-bar" style="width: 80%"></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top">
+                <span>Entity Framework / Dapper</span><span>7/10</span>
+              </div>
+              <div class="progress progress-modern">
+                <div class="progress-bar" style="width: 70%"></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top">
+                <span>Web API (REST/SOAP)</span><span>9/10</span>
+              </div>
+              <div class="progress progress-modern">
+                <div class="progress-bar" style="width: 90%"></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <div class="skill-top">
+                <span>SQL / PL-SQL</span><span>7/10</span>
+              </div>
+              <div class="progress progress-modern">
+                <div class="progress-bar" style="width: 70%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="900">
+          <div class="card-soft p-4">
+            <h3 class="h5 fw-semibold mb-3">Soft skills</h3>
+            <div class="row g-3">
+              <div class="col-sm-6"><div class="tag">Comunicação</div></div>
+              <div class="col-sm-6"><div class="tag">Colaboração</div></div>
+              <div class="col-sm-6"><div class="tag">Trabalho em equipa</div></div>
+              <div class="col-sm-6"><div class="tag">Organização</div></div>
+              <div class="col-sm-6"><div class="tag">Atenção ao detalhe</div></div>
+              <div class="col-sm-6"><div class="tag">Autonomia</div></div>
+            </div>
+
+            <div class="mt-4">
+              <p class="text-muted mb-0 small">
+                (Se quiseres, posso transformar esta secção num “skills grid” com ícones Devicon para ficar ainda mais visual.)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="section">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-duration="900">
+          <h2 class="h3 fw-bold mb-2">Portfólio</h2>
+          <p class="text-muted mb-4">
+            Aqui podes encontrar projetos e exemplos de código no meu GitHub.
+          </p>
+          <a class="btn btn-primary" href="https://github.com/joaomachado46" target="_blank" rel="noopener">
+            Abrir GitHub
+          </a>
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="900">
+          <div class="card-soft p-4">
+            <div class="portfolio-grid">
+              <a class="portfolio-card" href="https://github.com/joaomachado46" target="_blank" rel="noopener">
+                <div class="pc-title">GitHub</div>
+                <div class="pc-text">Repositórios, projetos e snippets</div>
+                <div class="pc-meta">github.com/joaomachado46</div>
+              </a>
+              <div class="portfolio-card disabled">
+                <div class="pc-title">Projeto #1</div>
+                <div class="pc-text">Placeholder para colocares um projeto em destaque</div>
+                <div class="pc-meta">Em breve</div>
+              </div>
+              <div class="portfolio-card disabled">
+                <div class="pc-title">Projeto #2</div>
+                <div class="pc-text">Outro destaque (API, integração, etc.)</div>
+                <div class="pc-meta">Em breve</div>
+              </div>
+              <div class="portfolio-card disabled">
+                <div class="pc-title">Projeto #3</div>
+                <div class="pc-text">Podes apontar para live demo ou repo</div>
+                <div class="pc-meta">Em breve</div>
+              </div>
+            </div>
+
+            <p class="text-muted small mt-3 mb-0">
+              Dica: se me disseres 2–3 projetos que queres mostrar, eu monto estes cards com links e descrições.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contacto" class="section section-dark">
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="900">
+          <h2 class="h3 fw-bold mb-2">Contacto</h2>
+          <p class="text-muted mb-4">
+            Se quiseres falar sobre projetos, oportunidades ou colaborações, envia mensagem.
+          </p>
+
+          <div class="card-soft p-4">
+            <div class="contact-item">
+              <div class="contact-label">Email</div>
+              <a class="contact-value" href="mailto:joaopcmachado46@gmail.com">joaopcmachado46@gmail.com</a>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-label">Telefone</div>
+              <a class="contact-value" href="tel:+351918574111">+351 918 574 111</a>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-label">GitHub</div>
+              <a class="contact-value" href="https://github.com/joaomachado46" target="_blank" rel="noopener">github.com/joaomachado46</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="900">
+          <div class="card-soft p-4 h-100">
+            <h3 class="h5 fw-semibold mb-3">Mensagem rápida</h3>
+            <p class="text-muted small mb-3">
+              (Este formulário é só UI. Para funcionar, precisas de backend ou serviço tipo Formspree.)
+            </p>
+
+            <form onsubmit="return false;">
+              <div class="mb-3">
+                <label class="form-label">Nome</label>
+                <input class="form-control form-control-lg" type="text" placeholder="O teu nome">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input class="form-control form-control-lg" type="email" placeholder="o.teu@email.com">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Mensagem</label>
+                <textarea class="form-control form-control-lg" rows="4" placeholder="Escreve a tua mensagem..."></textarea>
+              </div>
+              <button class="btn btn-primary btn-lg w-100">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container d-flex justify-content-between flex-wrap gap-2">
+      <span class="text-muted small">© <span id="year"></span> João Machado</span>
+      <span class="text-muted small">Feito com HTML, CSS e Bootstrap</span>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts.js"></script>
 </body>
-
 </html>
-<script>
-    AOS.init();
-    var $doc = $('html, body');
-    $('a').click(function () {
-        $doc.animate({
-            scrollTop: $($.attr(this, 'href')).offset().top
-        }, 500);
-        return false;
-    });
-
-     $(document).ready(function () {
-        // Menu toggle
-        $("#btn-bars").on("click", function () {
-            $("header").toggleClass("open-menu");
-        });
-        $("#closeX").on("click", function () {
-            $("header").removeClass("open-menu");
-        });
-
-        // Apenas obter localização e mostrar na consola
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (pos) {
-                console.log("Latitude:", pos.coords.latitude);
-                console.log("Longitude:", pos.coords.longitude);
-            }, function (err) {
-                console.error("Erro ao obter localização:", err.message);
-            });
-        } else {
-            console.log("Geolocalização não suportada pelo navegador.");
-        }
-    });
-
-</script>
